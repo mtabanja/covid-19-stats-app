@@ -227,7 +227,7 @@ export default class Home extends Component {
       color: white;
       margin-top: 6%;
       padding: 1%;
-      min-height: 88px;
+      min-height: 144px;
       width: 100%;
       -webkit-box-shadow: 0px 2px 6px 0px rgba(105, 105, 105, 1);
       -moz-box-shadow: 0px 2px 6px 0px rgba(105, 105, 105, 1);
@@ -318,19 +318,30 @@ export default class Home extends Component {
               </Box>
             </Col>
           </Row>
-          <Container>
-            <Row>
+          <Row>
+            <Col>
               <Box>
                 <p>CASES PER ONE MILLION</p>
                 <CountUp
-                  style={{ fontSize: "2.5rem", color: "yellow" }}
+                  style={{ fontSize: "2rem", color: "yellow" }}
                   start={0}
                   end={this.state.data.casesPerOneMillion}
                   duration={3}
                 ></CountUp>
               </Box>
-            </Row>
-          </Container>
+            </Col>
+            <Col>
+              <Box>
+                <p>SERIOUS</p>
+                <CountUp
+                  style={{ fontSize: "2rem", color: "#a81e1e" }}
+                  start={0}
+                  end={this.state.data.critical}
+                  duration={3}
+                ></CountUp>
+              </Box>
+            </Col>
+          </Row>
         </Container>
       </div>
     );
