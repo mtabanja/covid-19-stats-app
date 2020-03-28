@@ -20,10 +20,10 @@ const MapChart = () => {
     onMouseEnter();
   }, [data]);
 
-  const onMouseEnter = async NAME => {
+  const onMouseEnter = async country => {
     try {
       await superagent
-        .get(`https://corona.lmao.ninja/countries/${NAME}`)
+        .get(`https://corona.lmao.ninja/countries/${country}`)
         .then(res => {
           setData(res.body);
         });
@@ -34,8 +34,6 @@ const MapChart = () => {
       death: `Deaths:${!data.deaths ? "No info" : data.deaths}`
     });
   };
-
-  console.log("dataOut", data.country, data.cases);
 
   return (
     <Container>
@@ -49,8 +47,8 @@ const MapChart = () => {
                     key={geo.rsmKey}
                     geography={geo}
                     onMouseEnter={async () => {
-                      const { NAME } = geo.properties;
-                      onMouseEnter(NAME);
+                      const { ISO_A2 } = geo.properties;
+                      onMouseEnter(ISO_A2);
                     }}
                     onMouseLeave={() => {
                       setContent("");
@@ -75,9 +73,9 @@ const MapChart = () => {
         </ComposableMap>
       </>
       <ReactTooltip>
-        <p style={{ fontSize: "1rem" }}>{content.country}</p>
-        <p>{content.cases}</p>
-        <p>{content.death}</p>
+        <p style={{ fontSize: "1.5rem" }}>{content.country}</p>
+        <p style={{ fontSize: "1rem" }}>{content.cases}</p>
+        <p style={{ fontSize: "1rem" }}>{content.death}</p>
       </ReactTooltip>
     </Container>
   );
