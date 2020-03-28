@@ -5,7 +5,6 @@ import Dropdown from "react-dropdown";
 import CountUp from "react-countup";
 import superagent from "superagent";
 import "./DropDown.css";
-
 export default class Home extends Component {
   countryList = [
     "Afghanistan",
