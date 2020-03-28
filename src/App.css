@@ -3,9 +3,6 @@ body {
   background: rgb(20, 20, 20) !important;
 }
 * {
-  /* font-family: "Francois One", sans-serif; */
-  /* font-family: "Passion One", cursive; */
-  /* font-family: "Oxanium", cursive; */
   font-family: "Viga", sans-serif;
 }
 .App {

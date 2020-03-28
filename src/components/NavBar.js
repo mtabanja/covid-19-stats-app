@@ -34,6 +34,12 @@ export default class NavBar extends Component {
               >
                 Timeline
               </Nav.Link>
+              <Nav.Link
+                style={{ color: "white", fontSize: "1.2rem" }}
+                href="/map"
+              >
+                Map
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
