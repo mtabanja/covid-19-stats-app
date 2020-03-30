@@ -8,3 +8,9 @@ body {
 .App {
   text-align: center;
 }
+
+.tool-top {
+  background: rgb(0, 0, 0) !important;
+  border: 1px solid rgba(255, 255, 255, 0.527) !important;
+  /* display: none !important; */
+}

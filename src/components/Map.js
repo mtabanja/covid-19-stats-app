@@ -15,26 +15,37 @@ const geoUrl =
 const MapChart = () => {
   const [content, setContent] = useState("");
   const [data, setData] = useState("");
+  const [isTrue, setIsTrue] = useState(false);
 
   useEffect(() => {
-    onMouseEnter();
-  }, [data]);
-
-  const onMouseEnter = async country => {
-    try {
-      await superagent
-        .get(`https://corona.lmao.ninja/countries/${country}`)
-        .then(res => {
-          setData(res.body);
-        });
-    } catch (error) {}
-    await setContent({
+    setContent({
       country: `${data.country}`,
       cases: `Cases:${!data.cases ? "No info" : data.cases}`,
       death: `Deaths:${!data.deaths ? "No info" : data.deaths}`
     });
-  };
+    console.log("data", data);
+  }, [data]);
 
+  const onMouseEnter = country => {
+    setContent("");
+    superagent
+      .get(`https://corona.lmao.ninja/countries/${country}`)
+      .then(res => {
+        setData(res.body);
+      })
+      .catch(error => {
+        console.error("onRejected function called: " + error.message);
+      });
+
+    setIsTrue(true);
+  };
+  let tooltip = (
+    <ReactTooltip className="tool-top">
+      <p style={{ fontSize: "1.5rem" }}>{content.country}</p>
+      <p style={{ fontSize: "1rem" }}>{content.cases}</p>
+      <p style={{ fontSize: "1rem" }}>{content.death}</p>
+    </ReactTooltip>
+  );
   return (
     <Container>
       <>
@@ -46,8 +57,8 @@ const MapChart = () => {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    onMouseEnter={async () => {
-                      const { ISO_A2 } = geo.properties;
+                    onMouseEnter={() => {
+                      const { ISO_A2, NAME } = geo.properties;
                       onMouseEnter(ISO_A2);
                     }}
                     onMouseLeave={() => {
@@ -62,7 +73,16 @@ const MapChart = () => {
                       hover: {
                         fill: "#F53",
                         outline: "none",
-                        stroke: "white"
+                        stroke: "white",
+                        cursor: "pointer",
+                        transition: "all 500ms"
+                      },
+                      pressed: {
+                        fill: "black",
+                        stroke: "#9E1030",
+                        strokeWidth: 0.75,
+                        outline: "none",
+                        transition: "all 250ms"
                       }
                     }}
                   />
@@ -72,11 +92,7 @@ const MapChart = () => {
           </ZoomableGroup>
         </ComposableMap>
       </>
-      <ReactTooltip>
-        <p style={{ fontSize: "1.5rem" }}>{content.country}</p>
-        <p style={{ fontSize: "1rem" }}>{content.cases}</p>
-        <p style={{ fontSize: "1rem" }}>{content.death}</p>
-      </ReactTooltip>
+      {isTrue && tooltip}
     </Container>
   );
 };
