@@ -8,6 +8,7 @@ import WorldWide from "./components/WorldWide";
 import Country from "./components/Country";
 import Chart from "./components/Chart";
 import Map from "./components/Map";
+import NotFoundContainer from "./NotFoundContainer";
 
 function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/country" component={Country} exact />
       <Route path="/timeline" component={Chart} exact />
       <Route path="/map" component={Map} />
+      <Route path="/" component={NotFoundContainer} />
     </div>
   );
 }
