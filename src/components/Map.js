@@ -8,6 +8,7 @@ import {
   Geography
 } from "react-simple-maps";
 import ReactTooltip from "react-tooltip";
+import styled from "styled-components";
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -23,7 +24,7 @@ const MapChart = () => {
       cases: `Cases:${!data.cases ? "No info" : data.cases}`,
       death: `Deaths:${!data.deaths ? "No info" : data.deaths}`
     });
-    console.log("data", data);
+    // console.log("data", data);
   }, [data]);
 
   const onMouseEnter = country => {
@@ -46,6 +47,7 @@ const MapChart = () => {
       <p style={{ fontSize: "1rem" }}>{content.death}</p>
     </ReactTooltip>
   );
+
   return (
     <Container>
       <>
