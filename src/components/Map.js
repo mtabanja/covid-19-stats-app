@@ -5,7 +5,7 @@ import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
-  Geography
+  Geography,
 } from "react-simple-maps";
 import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
@@ -22,19 +22,19 @@ const MapChart = () => {
     setContent({
       country: `${data.country}`,
       cases: `Cases:${!data.cases ? "No info" : data.cases}`,
-      death: `Deaths:${!data.deaths ? "No info" : data.deaths}`
+      death: `Deaths:${!data.deaths ? "No info" : data.deaths}`,
     });
     // console.log("data", data);
   }, [data]);
 
-  const onMouseEnter = country => {
+  const onMouseEnter = (country) => {
     setContent("");
     superagent
-      .get(`https://corona.lmao.ninja/countries/${country}`)
-      .then(res => {
+      .get(`https://corona.lmao.ninja/v2/countries/${country}`)
+      .then((res) => {
         setData(res.body);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("onRejected function called: " + error.message);
       });
 
@@ -55,7 +55,7 @@ const MapChart = () => {
           <ZoomableGroup>
             <Geographies geography={geoUrl}>
               {({ geographies }) =>
-                geographies.map(geo => (
+                geographies.map((geo) => (
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
@@ -70,22 +70,22 @@ const MapChart = () => {
                       default: {
                         fill: "rgb(104, 0, 0)",
                         outline: "none",
-                        stroke: "rgba(0, 0, 0, 0.363)"
+                        stroke: "rgba(0, 0, 0, 0.363)",
                       },
                       hover: {
                         fill: "#F53",
                         outline: "none",
                         stroke: "white",
                         cursor: "pointer",
-                        transition: "all 500ms"
+                        transition: "all 500ms",
                       },
                       pressed: {
                         fill: "black",
                         stroke: "#9E1030",
                         strokeWidth: 0.75,
                         outline: "none",
-                        transition: "all 250ms"
-                      }
+                        transition: "all 250ms",
+                      },
                     }}
                   />
                 ))

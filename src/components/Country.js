@@ -199,23 +199,23 @@ export default class Home extends Component {
     "Venezuela",
     "Vietnam",
     "Zambia",
-    "Zimbabwe"
+    "Zimbabwe",
   ];
   state = { data: "", country: "" };
 
   componentDidMount = () => {
     superagent
-      .get(`https://corona.lmao.ninja/countries/netherlands`)
-      .then(res => {
+      .get(`https://corona.lmao.ninja/v2/countries/netherlands`)
+      .then((res) => {
         this.setState({ data: res.body });
       });
   };
 
-  _onSelect = async option => {
+  _onSelect = async (option) => {
     await this.setState({ country: option.label });
     await superagent
-      .get(`https://corona.lmao.ninja/countries/${this.state.country}`)
-      .then(res => {
+      .get(`https://corona.lmao.ninja/v2/countries/${this.state.country}`)
+      .then((res) => {
         this.setState({ data: res.body });
       });
   };

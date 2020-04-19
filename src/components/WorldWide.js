@@ -8,8 +8,8 @@ export default class WorldWide extends Component {
   state = { data: "" };
   componentDidMount = () => {
     superagent
-      .get("https://corona.lmao.ninja/all")
-      .then(res => this.setState({ data: res.body }));
+      .get("https://corona.lmao.ninja/v2/all")
+      .then((res) => this.setState({ data: res.body }));
   };
   render() {
     const Box = styled.div`
