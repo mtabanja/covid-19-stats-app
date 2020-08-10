@@ -1,7 +1,7 @@
 # Multiplayer Quiz game 
 
 
-![Alt text](public/screenshots/Screen Shot 2020-08-10 at 15.32.40.png?raw=true "Title")![GitHub Logo](public/screenshots/Screen Shot 2020-08-10 at 15.33.05.png?raw=true "Title")![Alt text](public/screenshots/Screen Shot 2020-08-10 at 15.33.29.png?raw=true "Title")
+![Alt text](public/screenshots/Screen Shot 2020-08-10 at 15.32.40.png?raw=true "screenshot1")
 
 
 # [-- Check It Live --](https://covid-19stats.ga/)
