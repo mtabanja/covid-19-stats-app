@@ -17,7 +17,7 @@ when COVID 19 first started and began to see more cases every day I decided to m
 
 ## Explore The Code:
 
-1. Clone the git repository into a new directory on your computer: `git clone git@github.com:mtabanja/week7-game-project-client.git`
+1. Clone the git repository into a new directory on your computer: `git@github.com:mtabanja/covid-19-stats-app.git`
 2. Run `npm i` to install requird dependendencies
 3. Run `npm start` to start the app
 
