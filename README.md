@@ -6,7 +6,7 @@
 ![What is this](https://github.com/mtabanja/covid-19-stats-app/blob/master/public/screenshots/Screen%20Shot%202020-08-10%20at%2015.33.05.png?raw=true "screenshot2")
 
 
-#  &nbsp; &nbsp; &nbsp; &nbsp; [-- Live Demo --](https://covid-19stats.ga/)
+#  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [-- Live Demo --](https://covid-19stats.ga/)
 
 
 
