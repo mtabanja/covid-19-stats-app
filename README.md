@@ -1,7 +1,7 @@
 # Multiplayer Quiz game 
 
 
-![Alt text](public/screenshots/Screen Shot 2020-08-10 at 15.32.40.png?raw=true "screenshot1")
+[What is this](public/screenshots/Screen Shot 2020-08-10 at 15.32.40.png?raw=true "screenshot1")
 
 
 # [-- Check It Live --](https://covid-19stats.ga/)
