@@ -1,7 +1,7 @@
 # Multiplayer Quiz game 
 
 
-[What is this](public/screenshots/Screen Shot 2020-08-10 at 15.32.40.png?raw=true "screenshot1")
+[What is this](https://github.com/mtabanja/covid-19-stats-app/blob/master/public/screenshots/Screen%20Shot%202020-08-10%20at%2015.32.40.png?raw=true "screenshot1")
 
 
 # [-- Check It Live --](https://covid-19stats.ga/)
