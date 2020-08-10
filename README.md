@@ -12,7 +12,7 @@
 
 ## Description:
 
-when COVID 19 first started and began to see more cases every day I decided to make this simple app to help people understand what's going on in real-time in a simple way without any social-media complication
+when COVID 19 first started and began to see more cases every day I decided to make this simple app to help people understand what's going on by providing  data on real-time that shows only statistics and numbers simply without any social-media complication
 
 
 ## Explore The Code:
